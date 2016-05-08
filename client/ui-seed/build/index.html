@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Movie Flix</title>
+
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!-- endinject -->
+
+    <!-- vendor:css -->
+    <!-- endinject -->
+
+    <!-- app:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <ul class="nav nav-pills">
+                <li><a href="#/users">Users</a></li>
+                <li><a href="#/resources">Resources</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<section ng-view>
+
+</section>
+<footer>
+
+</footer>
+
+    <!-- bower:js -->
+    <script src="/bower_componenets/angular/angular.js"></script>
+    <script src="/bower_componenets/jquery/dist/jquery.js"></script>
+    <script src="/bower_componenets/angular-route/angular-route.js"></script>
+    <script src="/bower_componenets/angular-message/angular-message.js"></script>
+    <script src="/bower_componenets/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angularUtils-pagination/dirPagination.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:js -->
+    <script src="app/app.js"></script>
+    <script src="app/controller/login.controller.js"></script>
+    <script src="app/controller/movie-detail.controller.js"></script>
+    <script src="app/controller/movieList.controller.js"></script>
+    <script src="app/controller/register.controller.js"></script>
+    <script src="app/controller/ratingAndComment.controller.js"></script>
+    <script src="app/services/movieList.service.js"></script>
+    <script src="app/services/login.service.js"></script>
+    <script src="app/services/register.service.js"></script>
+    <!-- endinject -->
+
+    <!-- vendor:js -->
+    <!-- endinject -->
+
+    <!-- app:js -->
+    <!-- endinject -->
+
+
+</body>
+
+</html>
