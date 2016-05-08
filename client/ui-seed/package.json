@@ -1,0 +1,16 @@
+{
+  "name": "ui-seed",
+  "version": "1.0.0",
+  "description": "ui-seed project",
+  "author": "divyashree.vijayk",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-inject": "^4.0.0",
+    "main-bower-files": "^2.13.0",
+    "opn": "^4.0.1"
+  }
+}
