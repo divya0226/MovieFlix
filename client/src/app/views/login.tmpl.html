@@ -14,7 +14,7 @@
     <div class="main">
         <div class="input-group">
         <label for="emailid">Email ID</label>
-        <input type="text" class="form-control" name="emailid" id="emailid" ng-model="loginVm.login.emailid" placeholder="Your User Name" required>
+        <input type="text" class="form-control" name="emailid" id="emailid" ng-model="loginVm.emailid" placeholder="Your User Name" required>
         </div>
         <div ng-messages="loginForm.emailid.$error" class="error" ng-if="loginForm.emailid.$dirty">
             <p ng-message="required">Email ID cannot be empty</p>
@@ -24,7 +24,7 @@
 
         <div class="input-group">
         <label for="password">Password</label>
-        <input type="text" class="form-control" name="password" id="password" ng-model="loginVm.login.password" placeholder="Your password " required>
+        <input type="text" class="form-control" name="password" id="password" ng-model="loginVm.password" placeholder="Your password " required>
         </div>
         <div ng-messages="loginForm.password.$error" class="error" ng-if="loginForm.password.$dirty">
             <p ng-message="required">Password cannot be empty</p>

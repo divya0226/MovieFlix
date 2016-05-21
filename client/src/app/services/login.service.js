@@ -7,9 +7,9 @@
     angular.module('movieFlix')
         .service('loginService', loginService);
 
-    loginService.$inject = ['$http', '$q'];
+    loginService.$inject = ['$http', '$q', '$location'];
 
-    function loginService($http, $q) {
+    function loginService($http, $q, $location) {
         
         var loginVm = this;
         
@@ -28,13 +28,14 @@
                     if(strJSON.status=="Success")
                     {
                         alert("success");
-                        $window.location.href = '/movie.tmpl.html';
-                        //$location.url('/movieList');
+                        //$window.location.href = '/movie.tmpl.html';
+                        $location.path('/navigation');
                     }
 
                     if (!data.success) {
                         // if not successful, bind errors to error variables
                         alert("Incorrect Login !!");
+                        $location.path('/login');
                     }
                 });
 

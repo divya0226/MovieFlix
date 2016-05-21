@@ -21,7 +21,7 @@
 
 
         function processLoginForm(){
-            loginService.submitLoginForm(loginVm.login.emailid,loginVm.login.password);
+            loginService.submitLoginForm(loginVm.emailid,loginVm.password);
         }
     }
 })();

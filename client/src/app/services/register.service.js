@@ -10,9 +10,9 @@
     angular.module('movieFlix')
         .service('registerService', registerService);
 
-    registerService.$inject = ['$http', '$q'];
+    registerService.$inject = ['$http', '$q', '$location'];
 
-    function registerService($http, $q) {
+    function registerService($http, $q, $location) {
 
         var registerVm = this;
 
@@ -31,13 +31,14 @@
                     if(strJSON.status=="Success")
                     {
                         alert("success");
-                        $window.location.href = '/movie-tmpl.html';
-                        //$location.url('/movieList');
+                        //$window.location.href = '/movie-tmpl.html';
+                        $location.path('/navigation');
                     }
 
                     if (!data.success) {
                         // if not successful, bind errors to error variables
                         alert("Error");
+                        $location.path('/register');
                     }
                 });
 

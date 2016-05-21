@@ -22,23 +22,56 @@
                 controller: 'registerController',
                 controllerAs: 'registerVm'
             })
-            .when('/movieListDetail', {
+            .when('/navigation', {
+                templateUrl: 'app/views/navigation.tmpl.html'
+            })
+            .when('/allDetail/:imdbID', {
+                templateUrl: 'app/views/all-detail.tmpl.html',
+                controller: 'MovieDetailController',
+                controllerAs: 'movieDetailVm'
+            })
+            .when('/movieDetail/:imdbID', {
                 templateUrl: 'app/views/movie-detail.tmpl.html',
                 controller: 'MovieDetailController',
                 controllerAs: 'movieDetailVm'
             })
-            .when('/movieList', {
-                templateUrl: 'app/views/movie-list.tmpl.html',
+            .when('/seriesDetail/:imdbID', {
+                templateUrl: 'app/views/series-detail.tmpl.html',
+                controller: 'MovieDetailController',
+                controllerAs: 'movieDetailVm'
+            })
+            .when('/allMoviesSeries', {
+                templateUrl: 'app/views/all.tmpl.html',
+                controller: 'MovieDetailController',
+                controllerAs: 'movieDetailVm'
+            })
+            .when('/onlyMovie', {
+                templateUrl: 'app/views/movie-tmpl.html',
                 controller: 'movieListController',
                 controllerAs: 'movieVm'
             })
-            .when('/rating', {
+            .when('/onlySeries', {
+                templateUrl: 'app/views/series-tmpl.html',
+                controller: 'movieListController',
+                controllerAs: 'movieVm'
+            })
+            .when('/topMovies', {
+                templateUrl: 'app/views/topMovies-tmpl.html',
+                controller: 'movieListController',
+                controllerAs: 'movieVm'
+            })
+            .when('/topSeries', {
+                templateUrl: 'app/views/topSeries-tmpl.html',
+                controller: 'movieListController',
+                controllerAs: 'movieVm'
+            })
+            .when('/createComment', {
                 templateUrl: 'app/views/ratingComment.tmpl.html',
                 controller: 'ratingAndCommentController',
                 controllerAs: 'ratingVm'
             })
             .otherwise({
-                redirectTo: '/movieList'
+                redirectTo: '/login'
             });
     }
 

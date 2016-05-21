@@ -17,16 +17,16 @@
 
         var ratingVm = this;
 
-        ratingVm.formData = {};
+
 
         ratingVm.submitRatingForm = submitRatingForm;
 
-        function submitRatingForm(){
+        function submitRatingForm(rating){
 
             $http({
                 method  : 'POST',
                 url     : '/api/enter/ ',
-                data    : 'formData',  // pass in data as strings
+                data    : 'rating',  // pass in data as strings
                 headers : { 'Content-Type': 'application/json' }  // set the headers so angular passing info as form data (not request payload)
             })
                 .success(function(data) {
@@ -34,7 +34,7 @@
                     if(strJSON.status=="Success")
                     {
                         alert("success");
-                        $window.location.href = '/movie-tmpl.html';
+                        //$window.location.href = '/movie-tmpl.html';
                         //$location.url('/movieList');
                     }
 

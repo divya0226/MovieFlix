@@ -10,32 +10,39 @@
 
         var movieServiceVm = this;
 
+        movieServiceVm.getAllMovieAndSeries = getAllMovieAndSeries;
         movieServiceVm.getMovies = getMovies;
-        movieServiceVm.getTopRatedMovies = getTopRatedMovies;
-        movieServiceVm.getTopRatedSeries = getTopRatedSeries;
+        movieServiceVm.getSeries = getSeries;
+        movieServiceVm.getTopMovies = getTopMovies;
+        movieServiceVm.getTopSeries = getTopSeries;
         movieServiceVm.getMovieById = getMovieById;
-        movieServiceVm.getMovieByType = getMovieByType;
+
+
+        function getAllMovieAndSeries() {
+            return $http.get('/api/list/initialList')
+                .then(successFn, errorFn);
+        }
 
         function getMovies() {
             return $http.get('/api/list/initialList')
                 .then(successFn, errorFn);
         }
+
+        function getSeries() {
+            return $http.get('/api/list/initialList')
+                .then(successFn, errorFn);
+        }
         
-        function getTopRatedMovies() {
+        function getTopMovies() {
             return $http.get('/api/list/topRatedMovies')
                 .then(successFn, errorFn);
         }
 
-        function getTopRatedSeries() {
+        function getTopSeries() {
             return $http.get('/api/list/topRatedTvseries')
                 .then(successFn, errorFn);
         }
-
-        function getMovieByType(type) {
-            return $http.get('/api/list/getMovieByType/' + type)
-                .then(successFn, errorFn);
-        }
-
+        
         function getMovieById(id) {
             return $http.get('/api/list/getDetail/' + id)
                 .then(successFn, errorFn);
