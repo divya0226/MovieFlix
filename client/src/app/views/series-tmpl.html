@@ -1,0 +1,63 @@
+<div class="container" ng-init="moviesVm.getSeries()">
+
+    <h2>All Series</h2>
+    <div class="col-lg-8">
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="search">Sort</label>
+                <select class="form-control" ng-model="movieVm.selectedItem" ng-change="movieVm.changeSort(movieVm.selectedItem)">
+                    <option ng-repeat="item in movieVm.items" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+
+            <div class="col-xs-4">
+                <label for="search">Search:</label>
+                <input ng-model="movieVm.searchText" id="search" class="form-control" placeholder="Filter text">
+            </div>
+
+            <div class="col-xs-4">
+                <label for="search">items per page:</label>
+                <input type="number" min="1" max="25" class="form-control" ng-model="pageSize">
+            </div>
+        </div>
+    </div>
+
+    <table class="my-controller">
+
+
+        <thead>
+        <tr>
+
+            <th>Title</th>
+            <th>Year</th>
+            <th>Rated</th>
+            <th>Released</th>
+            <th>Actors</th>
+            <th>Language</th>
+            <th>imdbRating</th>
+            <th>imdbVotes</th>
+            <th>imdbID</th>
+            <th>Type</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr dir-paginate="movie in movieVm.movies | filter: movieVm.searchText |orderBy:movieVm.sorter.by:movieVm.sorter.reverse |itemsPerPage: pageSize">
+            <td><a ng-href="#/seriesDetail/{{movie.imdbID}}">{{movie.Title}}</a></td>
+            <td>{{movie.Year}}</td>
+            <td>{{movie.Rated}}</td>
+            <td>{{movie.Released}}</td>
+            <td>{{movie.Actors}}</td>
+            <td>{{movie.Language}}</td>
+            <td>{{movie.imdbRating}}</td>
+            <td>{{movie.imdbVotes}}</td>
+            <td>{{movie.imdbID}}</td>
+            <td>{{movie.Type}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <dir-pagination-controls boundary-links="true" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+    </div>
+
+</div>

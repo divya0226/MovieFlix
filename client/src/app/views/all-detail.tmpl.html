@@ -1,0 +1,38 @@
+<div class="container">
+
+    <table class="table table-striped">
+
+
+        <thead>
+        <tr>
+
+            <th>Title</th>
+            <th>Director</th>
+            <th>Writer</th>
+            <th>Actors</th>
+            <th>Plot</th>
+            <th>Language</th>
+            <th>Awards</th>
+            <th>Poster</th>
+            <th>Metascore</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="movie in movieDetailVm.movie | filter: movieVm.searchText |itemsPerPage: pageSize">
+            <td>{{movie.Title}}</td>
+            <td>{{movie.Director}}</td>
+            <td>{{movie.Writer}}</td>
+            <td>{{movie.Actors}}</td>
+            <td>{{movie.Plot}}</td>
+            <td>{{movie.Language}}</td>
+            <td>{{movie.Awards}}</td>
+            <td><img ng-src="{{movie.Poster}}"</td>
+            <td>{{movie.Metascore}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p><a href="#/createComment"> Write A Comment</a></p>
+
+</div>
